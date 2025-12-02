@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Bokingo - Développeur Web</title>
+    <style>
+        /* Reset basique */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            background-image: url("Backgroung.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: #014381;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            color: #014381;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1 1 calc(33% - 20px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+            font-size: 3rem;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+            color: #014381;
+            max-width: 350px;
+        }
+
+        .project.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== Responsiveness ===== */
+        @media(max-width: 1024px) {
+            .project {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media(max-width: 768px) {
+            section {
+                padding: 20px;
+            }
+
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project {
+                flex: 1 1 100%;
+                font-size: 2rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media(max-width: 480px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .project {
+                font-size: 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="LOGO.png" alt="logo" style="width: 100%; max-width: 400px; height: auto; margin: 0 auto 20px;">
+    <nav>
+        <a href="#about">À propos</a>
+        <a href="#projects">Nos services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>À propos de nous</h2>
+    <p>
+      Bienvenue sur le site officiel de Congolese Full-Stack It.
+      Nous sommes une société de pointe spécialisée dans la création, 
+      la maintenance et le dépannage de site web en République Démocratique du Congo.
+      Grâce à notre expertise et à la programmation assistée par intelligence Artificielle, 
+      nous réalisons des projets rapidement, avec précision et toujours adaptés à vos besoins. 
+      Faites confiance à notre savoir-faire pour donner vie à vos idées et émanciper votre société.
+    </p>
+</section>
+
+<section id="projects">
+    <h2>Nos Services</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>Création de site web</h3>
+        </div>
+        <div class="project">
+            <h3>Maintenance et correction des bugs</h3>
+            <p style="color: white;">Intervention rapide pour résoudre tout problème lié à votre site web</p>
+        </div>
+        <div class="project">
+            <h3>Hébergement et sécurité</h3>
+            <p style="color: white;">Gestion de serveur, sauvegardes et protection contre les cyberattaques.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Vous pouvez nous contacter par email : <a href="mailto:bokingodaniel4@gmail.com">bokingodaniel4@gmail.com</a></p>
+    <p>Ou me téléphoner au : <a href="tel:+243858056494">+243 858 056 494</a></p>
+    <a href="https://wa.me/243858056494?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20les%20services%20de%20Congolese%20Full-Stack%20It"
+       target="_blank">Nous contacter sur WhatsApp</a>
+</section>
+
+<footer>
+    <p>&copy; 2025 Daniel Bokingo. Tous droits réservés.</p>
+</footer>
+
+<script>
+    const projects = document.querySelectorAll('.project');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.3 });
+
+    projects.forEach(project => {
+        observer.observe(project);
+    });
+</script>
+
+</body>
+</html>
