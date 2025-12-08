@@ -7,28 +7,23 @@
     <style>
         /* Reset basique */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            width: 100%;
-            background-image: url("Backgroung.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
+        background-image: url("Backgroung.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+       
+        font-family: Arial, sans-serif;
+        color: white;
+    }
 
         header {
-            width: 100%;
             background-color: #014381;
             color: white;
             padding: 20px 0;
@@ -37,7 +32,7 @@
 
         header h1 {
             font-size: 3rem;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 2px 6px  rgba(0, 0, 0, 0.6);
         }
 
         nav {
@@ -46,6 +41,7 @@
 
         nav a {
             color: white;
+
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
@@ -57,8 +53,7 @@
 
         section {
             padding: 40px 20px;
-            width: 90%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: auto;
         }
 
@@ -68,10 +63,10 @@
         }
 
         .projects {
+
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
         }
 
         .project {
@@ -84,10 +79,9 @@
             transform: translateY(50px);
             transition: all 0.6s ease;
             font-size: 3rem;
-            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 2px 6px  rgba(0, 0, 0, 0.6);
             margin-bottom: 20px;
             color: #014381;
-            max-width: 350px;
         }
 
         .project.show {
@@ -95,68 +89,32 @@
             transform: translateY(0);
         }
 
+
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 20px 0;
             margin-top: 40px;
-            width: 100%;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ===== Responsiveness ===== */
-        @media(max-width: 1024px) {
-            .project {
-                flex: 1 1 calc(50% - 20px);
-            }
         }
 
         @media(max-width: 768px) {
-            section {
-                padding: 20px;
-            }
-
             .projects {
                 flex-direction: column;
-                align-items: center;
             }
 
             .project {
                 flex: 1 1 100%;
-                font-size: 2rem;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media(max-width: 480px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .project {
-                font-size: 1.5rem;
-            }
-
-            section h2 {
-                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
 
+
 <header>
-    <img src="LOGO.png" alt="logo" style="width: 100%; max-width: 400px; height: auto; margin: 0 auto 20px;">
+    
+    <img src="LOGO.png" alt="logo" style="width: 400px; height: auto; display: block; margin: 20px auto;">
     <nav>
         <a href="#about">À propos</a>
         <a href="#projects">Nos services</a>
@@ -168,23 +126,25 @@
     <h2>À propos de nous</h2>
     <p>
       Bienvenue sur le site officiel de Congolese Full-Stack It.
-      Nous sommes une société de pointe spécialisée dans la création, 
-      la maintenance et le dépannage de site web en République Démocratique du Congo.
-      Grâce à notre expertise et à la programmation assistée par intelligence Artificielle, 
-      nous réalisons des projets rapidement, avec précision et toujours adaptés à vos besoins. 
-      Faites confiance à notre savoir-faire pour donner vie à vos idées et émanciper votre société.
-    </p>
+      Nous sommes une societé de pointe spécialisée dans la création, 
+      la maintenance et le depannage de site web en République Démocratique du Congo.
+       Grâce à notre expertise et à la programmation assisté par intelligence Artificielle, 
+       nous réalisons des projets rapidement, avec précision et toujours adaptés à vos besoins. 
+      Faites confiance à notre savoir-faire pour donner vie à vos idées et émanciper votre societé.
+ </p>
 </section>
 
 <section id="projects">
     <h2>Nos Services</h2>
+
     <div class="projects">
         <div class="project">
-            <h3>Création de site web</h3>
+            <h3>création de site web</h3>
+    <br>
         </div>
         <div class="project">
             <h3>Maintenance et correction des bugs</h3>
-            <p style="color: white;">Intervention rapide pour résoudre tout problème lié à votre site web</p>
+            <p style="color: white;">intervention rapide pour resoudre tout problème lié à votre site web</p>
         </div>
         <div class="project">
             <h3>Hébergement et sécurité</h3>
@@ -193,12 +153,14 @@
     </div>
 </section>
 
+
 <section id="contact">
     <h2>Contact</h2>
-    <p>Vous pouvez nous contacter par email : <a href="mailto:bokingodaniel4@gmail.com">bokingodaniel4@gmail.com</a></p>
-    <p>Ou me téléphoner au : <a href="tel:+243858056494">+243 858 056 494</a></p>
+    <p>Vous pouvez nous contacter par email : <a href="mailto:bokingodaniel4@gmail.com">fullstackit003.com</a></p>
+    <p>Ou me Téléphoner au : <a href="tel: +243858056494">+243 858 056 494</a></p>
     <a href="https://wa.me/243858056494?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20les%20services%20de%20Congolese%20Full-Stack%20It"
-       target="_blank">Nous contacter sur WhatsApp</a>
+    target="_blank">Nous contacter sur WhatsApp
+</a>
 </section>
 
 <footer>
@@ -206,6 +168,9 @@
 </footer>
 
 <script>
+   
+
+   
     const projects = document.querySelectorAll('.project');
 
     const observer = new IntersectionObserver(entries => {
